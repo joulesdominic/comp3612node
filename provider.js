@@ -1,6 +1,8 @@
+// required modules
 const fs = require('fs');
 const { parse } = require('path');
 
+// reading and parsing raw data from JSON files
 const rawPaintingsData = fs.readFileSync('./paintings-nested.json');
 const rawArtistsData = fs.readFileSync('./artists.json');
 const rawGalleriesData = fs.readFileSync('./galleries.json');
@@ -51,6 +53,7 @@ function getPaintingsByTitle(title) {
 }
 
 function getPaintingsByColor(color) {
+    // https://builtin.com/software-engineering-perspectives/javascript-filter
     const matchedPaintings = paintingsData.filter(painting =>
         painting.details.annotation.dominantColors.some(
             dominantColor =>
@@ -89,10 +92,12 @@ function getGalleriesByCountry(country) {
     return matchedGalleries;
 }
 
+// function to send out not found message
 function notFound() {
     return { message: 'Not Found!' };
 }
 
+// exporting function to be used externally
 module.exports = {
     getAllPaintings, getPaintingByID, getPaintingsByGalleryID,
     getPaintingsByArtistID, getPaintingsYearOfWork, getPaintingsByTitle,
