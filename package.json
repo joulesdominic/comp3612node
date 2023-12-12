@@ -1,0 +1,15 @@
+{
+  "name": "data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "art.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node art.js"
+  },
+  "author": "Dominic Ramos",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
